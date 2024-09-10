@@ -9,7 +9,7 @@ const Orders = () => {
 
   const fetchAllOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/list');
+      const response = await axios.get('https://grocerease-backend-k60z.onrender.com/list');
       if (response.data.success) {
         setOrders(response.data.data);
         console.log(response.data.data);
@@ -22,7 +22,7 @@ const Orders = () => {
   };
 
   const statusHandler = async (event,orderId)=>{
-    const response = await axios.post("http://localhost:4000/status",{
+    const response = await axios.post("https://grocerease-backend-k60z.onrender.com/status",{
       orderId,
       status: event.target.value
     })
