@@ -20,14 +20,14 @@ const ShopContextProvider = (props) => {
   const [showMessage, setShowMessage] = useState(false);
 
   useEffect(()=>{
-    fetch('http://localhost:4000/allproducts')
+    fetch('https://grocerease-backend-k60z.onrender.com/allproducts')
     .then((response)=>response.json())
     .then((data)=>setAll_Product(data))
 
 
     //to fetch the the cart item added by the user and he is login again 
     if(localStorage.getItem('auth-token')){
-      fetch('http://localhost:4000/getcart',{
+      fetch('https://grocerease-backend-k60z.onrender.com/getcart',{
         method:'POST',
         headers:{
           Accept:'application/form-data',
@@ -44,7 +44,7 @@ const ShopContextProvider = (props) => {
   const addToCart=(itemId)=>{
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
     if(localStorage.getItem('auth-token')){
-      fetch('http://localhost:4000/addtocart',{
+      fetch('https://grocerease-backend-k60z.onrender.com/addtocart',{
         method:'POST',
         headers:{
           Accept:'application/form-data',
@@ -68,7 +68,7 @@ const ShopContextProvider = (props) => {
   const removeFromCart=(itemId)=>{
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
     if(localStorage.getItem('auth-token')){
-      fetch('http://localhost:4000/removefromcart',{
+      fetch('https://grocerease-backend-k60z.onrender.com/removefromcart',{
         method:'POST',
         headers:{
           Accept:'application/form-data',
