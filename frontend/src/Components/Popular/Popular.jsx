@@ -7,7 +7,7 @@ function Popular() {
   const [popularProducts, setPopularProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/popularinsnacks')
+    fetch('https://grocerease-backend-k60z.onrender.com/popularinsnacks')
       .then((response) => response.json())
       .then((data) => setPopularProducts(data));
   }, []);
