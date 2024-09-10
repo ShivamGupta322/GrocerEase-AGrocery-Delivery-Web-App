@@ -19,7 +19,7 @@ function SearchResults() {
 
     useEffect(() => {
         if (searchTerm) {
-            axios.get('http://localhost:4000/allproducts')
+            axios.get('https://grocerease-backend-k60z.onrender.com/allproducts')
                 .then(response => {
                     const allProducts = response.data;
                     console.log("All Products:", allProducts);
