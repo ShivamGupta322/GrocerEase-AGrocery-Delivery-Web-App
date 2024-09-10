@@ -23,7 +23,7 @@ function Navbar() {
         // Fetch user data if the user is logged in
         const token = localStorage.getItem('auth-token');
         if (token) {
-            fetch('http://localhost:4000/getuser', {
+            fetch('https://grocerease-backend-k60z.onrender.com/getuser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ function Navbar() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const token = localStorage.getItem('auth-token');
-        fetch('http://localhost:4000/updateuser', {
+        fetch('https://grocerease-backend-k60z.onrender.com/updateuser', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
