@@ -47,3 +47,14 @@
     "tailwindcss": "^3.4.7"
   }
 }
+
+
+{
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+
