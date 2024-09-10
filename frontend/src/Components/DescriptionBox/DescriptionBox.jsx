@@ -8,7 +8,7 @@ const DescriptionBox = ({ productId }) => {
     const [comment, setComment] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:4000/reviews/${productId}`)
+        fetch(`https://grocerease-backend-k60z.onrender.com/${productId}`)
             .then(response => response.json())
             .then(data => setReviews(data));
     }, [productId]);
@@ -23,7 +23,7 @@ const DescriptionBox = ({ productId }) => {
             comment,
         };
 
-        fetch('http://localhost:4000/addreview', {
+        fetch('https://grocerease-backend-k60z.onrender.com/addreview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
