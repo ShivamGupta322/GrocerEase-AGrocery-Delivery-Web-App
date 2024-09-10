@@ -7,7 +7,7 @@ const MyOrders = () => {
     const [data, setData] = useState([]);
 
     const fetchOrders=async()=>{
-        const response = await axios.post("http://localhost:4000/userorders",{},{headers:{
+        const response = await axios.post("https://grocerease-backend-k60z.onrender.com/userorders",{},{headers:{
             Accept:'application/form-data',
             'auth-token':`${localStorage.getItem('auth-token')}`,
             'Content-Type': 'application/json',
